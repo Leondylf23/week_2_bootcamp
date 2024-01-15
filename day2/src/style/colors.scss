@@ -1,0 +1,13 @@
+$white: #fff;
+$dark: #202D36;
+
+$shadow-black: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+
+html[data-theme="light"] {
+    --background-color: #{$white};
+}
+html[data-theme="dark"] {
+    --background-color: #{$dark};
+}
+
+$background-color: var(--background-color);

@@ -1,0 +1,8 @@
+@import "../../style/base.scss";
+
+.navbar {
+    @include container-x;
+    background-color: $background-color;
+    width: 100%;
+    box-shadow: $shadow-black;
+}

@@ -10,7 +10,7 @@ export default function Home({ isCustom = false }) {
 
     const counting = (time, decreaseTime) => {
         const current = time - 1;
-
+        if(current < 0) return;
         setCountdownDisplay({
             days: String(Math.floor(current / (24 * 60 * 60))).padStart(2, "0"),
             hours: String(Math.floor((current / 3600) % 24)).padStart(2, "0"),
