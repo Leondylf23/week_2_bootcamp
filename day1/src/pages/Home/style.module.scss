@@ -1,0 +1,78 @@
+@import "../../style/base.scss";
+
+.app {
+  @include content-center;
+
+  background: linear-gradient(
+    0deg,
+    $very-dark-purple 0%,
+    $mostly-dark-blue 100%
+  );
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  position: relative;
+
+  .background {
+    position: absolute;
+    height: 100dvh;
+    width: 100vw;
+    object-fit: cover;
+  }
+  .content {
+    @include container-y;
+
+    width: 100%;
+    align-items: center;
+    margin-top: -25vh;
+
+    @include media-screen-sm {
+      margin-top: -20vh;
+    }
+
+    .title {
+      width: 90%;
+      text-align: center;
+      color: $white;
+      font-size: $font-size-lg;
+      font-weight: $font-semibold;
+      margin-bottom: 3rem;
+    }
+    .timerContainer {
+      display: flex;
+      flex-direction: column;
+      width: 1;
+
+      .timerCards {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        @include media-screen-sm {
+            gap: 10px;
+        }
+      }
+    }
+  }
+  .bottom {
+    background-image: url("../../assets/imgs/pattern-hills.svg");
+    background-size: cover;
+    background-position: top right;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 25vh;
+    gap: 30px;
+
+    @include content-center;
+
+    @include media-screen-sm {
+      height: 20vh;
+      gap: 20px;
+      padding-top: 40px;
+      box-sizing: border-box;
+    }
+  }
+}

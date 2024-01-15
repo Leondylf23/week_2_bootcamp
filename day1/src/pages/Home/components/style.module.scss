@@ -1,0 +1,74 @@
+@import "../../../style/base.scss";
+
+.timerCard {
+    @include content-center;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(
+      to top,
+      $dark-destaturated-blue 0%,
+      $dark-destaturated-blue 50%,
+      $very-dark-blue 50%,
+      $very-dark-blue 100%
+    );
+    box-shadow: $mostly-dark-blue 0px 10px 0px 0px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    color: $soft-red;
+    font-size: $font-size-3xl;
+    position: relative;
+
+    @include media-screen-sm {
+        width: 70px;
+        height: 70px;
+        font-size: $font-size-lg;
+    }
+
+    .timer{
+      opacity: 80%;
+    }
+    .timerTitle {
+      position: absolute;
+      bottom: -35px;
+      font-size: $font-size-xs;
+      color: $grayish-blue;
+    }
+    .timerDentLeft {
+        position: absolute;
+        left: 0;
+        overflow: hidden;
+
+        .halfCircleLeft {
+            border-radius: 0px 150px 150px 0px;
+            background-color: $mostly-dark-blue;
+            translate: -5px;
+            width: 10px;
+            height: 10px;
+            -webkit-border-radius: 0px 150px 150px 0px;
+            -moz-border-radius: 0px 150px 150px 0px;
+            -ms-border-radius: 0px 150px 150px 0px;
+            -o-border-radius: 0px 150px 150px 0px;
+        }
+    }
+    .timerDentRight {
+        position: absolute;
+        right: 0;
+        overflow: hidden;
+        
+        .halfCircleRight {
+            border-radius: 150px 0px 0px 150px;
+            background-color: $mostly-dark-blue;
+            translate: 5px;
+            width: 10px;
+            height: 10px;
+            -webkit-border-radius: 150px 0px 0px 150px;
+            -moz-border-radius: 150px 0px 0px 150px;
+            -ms-border-radius: 150px 0px 0px 150px;
+            -o-border-radius: 150px 0px 0px 150px;
+        }
+    }
+}
+  
