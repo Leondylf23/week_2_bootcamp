@@ -52,10 +52,10 @@ export default function Home({ isCustom = false }) {
                 <h1 className={classes.title}>WE'RE LAUNCHING SOON</h1>
                 <div className={classes.timerContainer}>
                     <div className={classes.timerCards}>
-                        <TimerCard value={countdownDisplay?.days} title={"DAYS"} />
-                        <TimerCard value={countdownDisplay?.hours} title={"HOURS"} />
-                        <TimerCard value={countdownDisplay?.minutes} title={"MINUTES"} />
-                        <TimerCard value={countdownDisplay?.seconds} title={"SECONDS"} />
+                        <TimerCard value={countdownDisplay?.days} title={"DAYS"} key={"days"} />
+                        <TimerCard value={countdownDisplay?.hours} title={"HOURS"} key={"hours"} />
+                        <TimerCard value={countdownDisplay?.minutes} title={"MINUTES"} key={"minutes"} />
+                        <TimerCard value={countdownDisplay?.seconds} title={"SECONDS"} key={"seconds"} />
                     </div>
                 </div>
             </div>
