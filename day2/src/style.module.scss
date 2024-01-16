@@ -1,0 +1,9 @@
+@import "./style/base.scss";
+
+.main {
+    @include container-x;
+
+    justify-content: center;
+    padding-top: 100px;
+    background-color: $background-color;
+}

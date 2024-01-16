@@ -2,7 +2,64 @@
 
 .navbar {
     @include container-x;
+
+    justify-content: center;
     background-color: $background-color;
-    width: 100%;
     box-shadow: $shadow-black;
+    width: 100vw;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    
+    .navContainer {
+        @include container-x;
+        @include media-screen-xs {
+            @include padding-x (20px);
+            width: 100%;
+        }
+        @include media-screen-sm {
+            @include padding-x (20px);
+            width: 100%;
+        }
+        @include media-screen-md {
+            @include padding-x (20px);
+            width: 100%;
+        }
+        @include media-screen-lg {
+            @include padding-x (20px);
+            width: 100%;
+        }
+
+        box-sizing: border-box;
+        width: 1200px;
+        align-items: center;
+
+        .title {
+            @include font($font-size-md, $font-semibold);
+            @include media-screen-xs {
+                @include font($font-size-sm, $font-semibold);
+            }
+            @include media-screen-sm {
+                @include font($font-size-sm, $font-semibold);
+            }
+            flex-shrink: 0
+        }
+        .fillContainer {
+            @include fill-container;
+    
+            justify-content: end;
+            align-items: center;
+    
+            .darkModeBtn {
+                @include font($font-size-sm, $font-semibold);
+    
+                .btnA {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
 }

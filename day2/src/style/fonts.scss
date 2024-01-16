@@ -1,5 +1,8 @@
+@import "./colors.scss";
+
 // Fonts
-$font-family: "Roboto", sans-serif;
+// $font-family: "Roboto", sans-serif;
+$font-family: "Nunito Sans", sans-serif;
 
 // Sizes
 $font-size-xs: 12px;
@@ -15,6 +18,12 @@ $font-bold: 700;
 $font-semibold: 600;
 $font-normal: 500;
 $font-thin: 200;
+
+@mixin font($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $text-color;
+}
 
 // Configuration
 a, b, p, h1, h2, h3, h4, h5 {

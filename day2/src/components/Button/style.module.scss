@@ -1,0 +1,21 @@
+@import "../../style/base.scss";
+
+.defaultButton {
+    @include container-x;
+    @include padding-x(10px);
+    @include padding-y(6px);
+
+    appearance: none;
+    --webkit-appearance: none;
+    background-color: $primary-color;
+    box-shadow: $shadow-black;
+    border: 0;
+    align-items: center;
+
+    &:hover {
+        background-color: $secondary-color;
+    }
+    .icon {
+        margin-right: 10px;
+    }
+}

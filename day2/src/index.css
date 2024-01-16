@@ -2,4 +2,10 @@ body {
   margin: 0;
   width: 100vw;
   min-height: 100dvh;
+  background-color: var(--primary-color);
+  box-sizing: border-box;
+}
+.main-body {
+  margin-top: 80px;
+  padding-top: 20px;
 }

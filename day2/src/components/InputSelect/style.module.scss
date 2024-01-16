@@ -1,0 +1,45 @@
+@import "../../style/base.scss";
+
+.selectContainer {
+    @include font($font-size-sm, $font-normal);
+
+    position: relative;
+    width: 100%;
+
+    .selectNoIcon {
+        @include font($font-size-sm, $font-normal);
+
+        border: 0;
+        width: 100%;
+        height: 60px;
+        box-shadow: $shadow-black;
+        box-sizing: border-box;
+        padding: 5px 20px 5px 15px;
+        background-color: $primary-color;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+    .selectWithIcon {
+        @include font($font-size-sm, $font-normal);
+
+        border: 0;
+        width: 100%;
+        height: 60px;
+        box-shadow: $shadow-black;
+        box-sizing: border-box;
+        padding: 5px 20px 5px 40px;
+        background-color: $primary-color;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+    .iconField {
+        position: absolute;
+        top: 32%;
+        left: 12px;
+    }
+    .arrowField {
+        position: absolute;
+        top: 32%;
+        right: 12px;
+    }
+}

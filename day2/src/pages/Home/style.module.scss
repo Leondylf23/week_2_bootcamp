@@ -1,7 +1,107 @@
 @import "../../style/base.scss";
 
-.container {
-    background-color: $background-color;
-    width: 100vw;
-    height: 100vh;
-}
+@include main-screen {
+    .icon {
+        color: $text-color;
+    }
+    .searchContainer {
+        @include container-x;
+        @include media-screen-xs {
+            @include container-y;
+            margin-bottom: 0px;
+        }
+        @include media-screen-sm {
+            @include container-y;
+            margin-bottom: 0px;
+        }
+
+        margin-bottom: 30px;
+
+        .filter {
+            @include media-screen-xs {
+                @include margin-y(30px);
+            }
+            @include media-screen-sm {
+                @include margin-y(30px);
+            }
+            width: 200px;
+            flex-shrink: 0;
+        }
+        .space {
+            width: 100%;
+            @include media-screen-xs {
+                @include margin-y(30px);
+            }
+            @include media-screen-sm {
+                @include margin-y(30px);
+            }
+        }
+        .searchField {
+            @include media-screen-xs {
+                width: 100%;
+            }
+            @include media-screen-sm {
+                width: 100%;
+            }
+
+            width: 30%;
+            flex-shrink: 0;
+        }
+    }
+    .containerDatas {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        @include media-screen-xs {
+            @include container-y;
+        };
+        @include media-screen-sm {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        @include media-screen-md {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        @include media-screen-lg {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        gap: 10px;
+
+        .card {
+            background-color: $background-color !important;
+            
+            .cardTitle {
+                @include font($font-size-md, $font-bold);
+                @include margin-y(10px);
+            }
+            .cardContent {
+                @include font($font-size-sm, $font-semibold);
+                .contentText {
+                    @include font($font-size-sm, $font-normal);
+                }
+            }
+        }
+    }
+    .emptyContainer {
+        @include container-items-center;
+
+        width: 100%;
+        height: 500px;
+
+        .text {
+            @include font($font-size-md, $font-bold);
+        }
+    }
+    .loadingContainer {
+        @include container-items-center;
+
+        width: 100%;
+        height: 500px;
+
+        .text {
+            @include font($font-size-md, $font-bold);
+        }
+    }
+};
