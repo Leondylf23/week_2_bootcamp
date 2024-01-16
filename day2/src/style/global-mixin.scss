@@ -9,11 +9,11 @@
 @mixin main-screen {
     .mainContainer {
         width: 1200px;
-
+        
         @include media-screen-xs {
             @include padding-x (20px);
             padding-bottom: 15px;
-            width: 100vw;
+            width: 100%;
         } 
         @include media-screen-sm {
             @include padding-x (20px);
@@ -30,11 +30,14 @@
             padding-bottom: 15px;
             width: 100%;
         }
+
         background-color: $background-color;
         min-height: 100dvh;
-        box-sizing: border-box
+        box-sizing: border-box;
+
+
+        @content;
     }
-    @content;
 }
 @mixin container-x {
     display: flex;

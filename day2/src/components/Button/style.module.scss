@@ -4,6 +4,7 @@
     @include container-x;
     @include padding-x(10px);
     @include padding-y(6px);
+    @include font($font-size-sm, $font-semibold);
 
     appearance: none;
     --webkit-appearance: none;
@@ -11,6 +12,7 @@
     box-shadow: $shadow-black;
     border: 0;
     align-items: center;
+    cursor: pointer;
 
     &:hover {
         background-color: $secondary-color;

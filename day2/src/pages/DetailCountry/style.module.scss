@@ -82,12 +82,15 @@
 
                     @include media-screen-xs {
                         width: 100%;
+                        margin-bottom: 40px;
                     } 
                     @include media-screen-sm {
                         width: 100%;
+                        margin-bottom: 40px;
                     }
                     @include media-screen-md {
                         width: 100%;
+                        margin-bottom: 40px;
                     }
 
                     .countryDetail {
@@ -118,12 +121,22 @@
                         @include padding-x(20px);
                         @include padding-y(5px);
 
-                        border: $gray 1px solid;
+                        border: $secondary-color 1px solid;
                         box-shadow: $shadow-black;
                         background-color: $primary-color;
                     }
                 }
             }
+        }
+    }
+    .loadingContainer {
+        @include container-items-center;
+
+        width: 100%;
+        height: 80dvh;
+
+        .text {
+            @include font($font-size-md, $font-semibold);
         }
     }
     .nullContainer {

@@ -46,16 +46,22 @@ export default function App(){
     });
 
     function toggleDarkMode() {
-        if(darkMode === "light") {
-            const name = "dark";
-            document.documentElement.setAttribute("data-theme", name);
-            setDarkMode(name);
-        } else {
-            const name = "light";
-            document.documentElement.setAttribute("data-theme", name);
-            setDarkMode(name);
-        }
+        let name = darkMode === "light" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", name);
+        localStorage.setItem("theme", name);
+        setDarkMode(name);
     }
+
+    useState(() => {
+        const getThemeData = localStorage.getItem("theme");
+
+        if(getThemeData && (getThemeData === "light" || getThemeData === "dark")) {
+            setDarkMode(getThemeData);
+            document.documentElement.setAttribute("data-theme", getThemeData);
+        } else {
+            localStorage.setItem("theme", darkMode);
+        }
+    }, []);
 
     return(
         <ThemeProvider theme={darkTheme}>

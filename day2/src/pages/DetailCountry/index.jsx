@@ -5,9 +5,11 @@ import { Typography } from '@mui/material';
 
 import classes from "./style.module.scss";
 import Button from "../../components/Button";
+import { callApi } from "../../domain/api";
 
 export default function DetailCountry() {
     const [data, setData] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     const navigate = useNavigate();
 
@@ -35,18 +37,39 @@ export default function DetailCountry() {
         navigate("/");
     }
 
-    useEffect(() => {
+    async function fetchData() {
         const detailData = localStorage.getItem("detailTemp");
         if (!detailData) {
-            navigate("");
+            navigate("/");
         }
         try {
-            setData(JSON.parse(detailData));
+            let detailDataFromLS = JSON.parse(detailData);
+            const borderCountriesCodes = detailDataFromLS?.borderCountries;
+
+            if(borderCountriesCodes) {
+                setIsLoading(true);
+
+                try {
+                    const res = await callApi("/alpha", "GET", {}, {codes: borderCountriesCodes.join(",")});
+
+                    detailDataFromLS.borderCountries = res.map((e) => e?.name?.common);
+                } catch (error) {
+                    console.log(error.message);
+                }
+                setIsLoading(false);
+            }
+
+            setData(detailDataFromLS);
         } catch (error) {
             setTimeout(() => {
                 navigate("/");
             }, 2000);
         }
+    }
+
+    useEffect(() => {
+        window.scrollTo(0,0);
+        fetchData();
     }, []);
 
     return (
@@ -86,9 +109,15 @@ export default function DetailCountry() {
                         </div>
                     </div>
                 </div> :
+                isLoading ?
+                <div className={classes.loadingContainer}>
+                    <h1 className={classes.text}>Getting data...</h1>
+                </div>
+                :
                 <div className={classes.nullContainer}>
                     <h1 className={classes.text}>Error getting data!</h1>
-                </div>}
+                </div>
+                }
         </div>
     );
 }
