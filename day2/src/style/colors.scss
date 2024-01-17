@@ -1,22 +1,26 @@
-$white: #fff;
-$dark: #202D36;
-$dark-gray: #2d3e4b;
-$black: #000;
-$gray: #7e7e7e;
+$very-light-gray-bg: hsl(0, 0%, 98%);
+$white-element: hsl(0, 0%, 100%);
+$very-dark-blue-text: hsl(200, 15%, 8%);
+
+$very-dark-blue-bg: hsl(207, 26%, 17%);
+$dark-blue-elements: hsl(209, 23%, 22%);
+$white-text: hsl(0, 0%, 100%);
+
+$dark-gray-input: hsl(0, 0%, 52%);
 
 $shadow-black: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
 
 html[data-theme="light"] {
-    --background-color: #{$white};
-    --primary-color: #{$white};
-    --secondary-color: #{$gray};
-    --text-color: #{$black};
+    --background-color: #{$very-light-gray-bg};
+    --primary-color: #{$white-element};
+    --secondary-color: #{$dark-gray-input};
+    --text-color: #{$very-dark-blue-text};
 }
 html[data-theme="dark"] {
-    --background-color: #{$dark};
-    --primary-color: #{$dark};
-    --secondary-color: #{$gray};
-    --text-color: #{$white};
+    --background-color: #{$very-dark-blue-bg};
+    --primary-color: #{$dark-blue-elements};
+    --secondary-color: #{$dark-gray-input};
+    --text-color: #{$white-text};
 }
 
 $background-color: var(--background-color);

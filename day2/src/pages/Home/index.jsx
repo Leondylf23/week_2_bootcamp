@@ -33,9 +33,9 @@ export default function Home() {
                 topLvlDomain: e?.tld,
                 currencies: e?.currencies,
                 languages: e?.languages,
-                borderCountries: e?.borders
+                borderCountries: e?.borders,
             }));
-            remappedData.splice(30);
+            remappedData.splice(70);
             setCountryList(remappedData);
             setCountryListDisplay(remappedData);
             setIsLoading(false);
@@ -45,7 +45,6 @@ export default function Home() {
     }
     function selectFilter(filterData) {
         if (filterData != "") {
-            console.log(filterData);
             setCountryListDisplay(countryList.filter(v => v.region === filterData));
         } else {
             setCountryListDisplay(countryList);
@@ -86,8 +85,8 @@ export default function Home() {
                 name: 'Africa',
             },
             {
-                value: 'America',
-                name: 'America',
+                value: 'Americas',
+                name: 'Americas',
             },
             {
                 value: 'Asia',
