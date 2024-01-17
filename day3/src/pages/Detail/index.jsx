@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { callApi } from "../../domain/api";
+import { callApi, callApiLocal } from "../../domain/api";
 
 import BigCard from "../../components/BigCard";
 import LoadingContainer from "../../components/LoadingContainer";
@@ -26,8 +26,16 @@ export default function DetailPage() {
         try {
             if(id) {
                 const resData = await callApi("/lookup.php", "GET", {}, { i: id });
+                let isFavorited = false;
+                
+                try {
+                    await callApiLocal(`/favorites/${id}`);
+                    isFavorited = true;
+                } catch (error) {
+                    isFavorited = false;
+                }
 
-                setDetailData(resData?.meals[0]);
+                setDetailData({...resData?.meals[0], isSaved: isFavorited});
                 setIsLoadingPage(false);
             } else {
                 navigate("/");

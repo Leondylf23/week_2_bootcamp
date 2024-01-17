@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ingredients } from "../../assets/imgs";
 import Button from "../../components/Button";
 import classes from "./style.module.scss";
-import { callApi, callApiLocal } from "../../domain/api";
+import { callApiLocal } from "../../domain/api";
 
 export default function BigCard({ data, goToDetail, showDetailBtn = true }) {
     const [ingredientsData, setIngredientsData] = useState([]);
@@ -12,9 +12,24 @@ export default function BigCard({ data, goToDetail, showDetailBtn = true }) {
     async function saveToFav() {
         try {
             setIsSaving(true);
-    
-            await callApiLocal("/favorites", "POST", {}, {}, {id: data?.idMeal, img: data?.strMealThumb, name: data?.strMeal});
-            setIsSaved(true);
+            const id = data?.idMeal;
+
+            try {
+                await callApiLocal(`/favorites/${id}`, "GET");
+            } catch (error) {
+                if(error?.response?.status === 404) {
+                    await callApiLocal("/favorites", "POST", {}, {}, {id: data?.idMeal, idMeal: data?.idMeal, strMealThumb: data?.strMealThumb, strMeal: data?.strMeal, strCategory: data?.strCategory});
+                    setIsSaved(true);
+                    setIsSaving(false);
+                    return;
+                } else {
+                    throw new Error("Error fetching data");
+                }
+            } 
+
+            await callApiLocal(`/favorites/${id}`, "DELETE");
+            setIsSaved(false);
+
             setIsSaving(false);
         } catch (error) {
             setIsSaving(false);
@@ -35,14 +50,15 @@ export default function BigCard({ data, goToDetail, showDetailBtn = true }) {
                 measure: measure
             });
         }
-
+        
+        setIsSaved(data?.isSaved);
         setIngredientsData(tempIng);
     }, []);
 
     return (
         <div className={classes.contentCard}>
             <div className={classes.leftSide}>
-                <h3 className={classes.title}>{data?.strMeal}</h3>
+                <h3 className={classes.title + " " + (showDetailBtn ? classes.titleTrunc : "")}>{data?.strMeal}</h3>
                 <p className={classes.contentDescription}>{data?.strInstructions}</p>
                 <h2 className={classes.ingredientTitle}>Ingredients</h2>
                 <div className={classes.ingridientsContainer}>

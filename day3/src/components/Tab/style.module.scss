@@ -1,0 +1,27 @@
+@import "../../style/base.scss";
+
+.tabsContainer {
+    @include container-x;
+    @include font($font-size-sm, $font-semibold);
+    // @include padding-x(30px);
+    @include max-content-width;
+
+    gap: 20px;
+    overflow-x: auto;
+
+    .tabName {
+        cursor: pointer;
+
+        &:hover {
+            color: $text-color-hover;
+        }
+    }
+    .tabNameActive {
+        cursor: pointer;
+        color: $text-color-active;
+
+        &:hover {
+            color: $text-color-hover;
+        }
+    }
+}

@@ -7,6 +7,7 @@ import NavBar from './components/Navbar';
 import DetailPage from './pages/Detail';
 
 import './index.css';
+import FavoritePage from './pages/Favorite';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,11 @@ const router = createBrowserRouter([
   {
     path: "/:id",
     element: <DetailPage />
-},
+  },
+  {
+    path: "/favorite",
+    element: <FavoritePage />
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

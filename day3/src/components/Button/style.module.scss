@@ -5,6 +5,7 @@
     @include font($font-size-md, $font-normal);
 
     width: 100%;
+    height: 100%;
     background-color: $primary-color;
     border: $secondary-color 1px solid;
     border-radius: 5px;
@@ -14,4 +15,29 @@
     &:hover {
         background-color: $primary-color-darker;
     }
+
+    @include media-screen-md {
+        @include font($font-size-sm, $font-normal);
+        color: $secondary-color;
+    }
+    @include media-screen-sm {
+        @include padding-y(5px);
+        @include font($font-size-sm, $font-normal);
+        color: $secondary-color;
+    }
+    @include media-screen-xs {
+        @include font($font-size-sm, $font-normal);
+        color: $secondary-color;
+    }
+}
+.buttonDisabled {
+    @include padding-y(10px);
+    @include font($font-size-md, $font-normal);
+
+    width: 100%;
+    background-color: $primary-color-darker;
+    border: $secondary-color 1px solid;
+    border-radius: 5px;
+    color: $secondary-color;
+    cursor: not-allowed;
 }

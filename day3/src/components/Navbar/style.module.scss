@@ -1,7 +1,7 @@
 @import "../../style/base.scss";
 
 .navBar {
-    @include padding(20px);
+    @include padding(30px);
     @include container-items-center;
 
     position: fixed;
@@ -10,6 +10,7 @@
     width: 100%;
     height: 60px;
     background-color: $background-color;
+    z-index: 50;
 
     .innerNav {
         @include max-content-width;
