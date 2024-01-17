@@ -1,0 +1,32 @@
+@import "./colors.scss";
+
+// Fonts
+$font-family: "Roboto", sans-serif;
+
+// Sizes
+$font-size-xs: 8px;
+$font-size-sm: 12px;
+$font-size-md: 16px;
+$font-size-lg: 20px;
+$font-size-xl: 26px;
+$font-size-xxl: 30px;
+$font-size-3xl: 36px;
+
+// Font Weights
+$font-bold: 700;
+$font-semibold: 600;
+$font-normal: 500;
+$font-thin: 200;
+
+@mixin font($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $text-color;
+}
+
+// Configuration
+a, b, p, h1, h2, h3, h4, h5, div {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+}

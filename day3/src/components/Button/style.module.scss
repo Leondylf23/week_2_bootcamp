@@ -1,0 +1,17 @@
+@import "../../style/base.scss";
+
+.button {
+    @include padding-y(10px);
+    @include font($font-size-md, $font-normal);
+
+    width: 100%;
+    background-color: $primary-color;
+    border: $secondary-color 1px solid;
+    border-radius: 5px;
+    color: $secondary-color;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $primary-color-darker;
+    }
+}

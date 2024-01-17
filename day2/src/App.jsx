@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     {
         path: "/detail",
         element: <DetailCountry />
-      },
+    },
   ]);
 
 export default function App(){

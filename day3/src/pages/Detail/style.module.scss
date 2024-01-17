@@ -1,0 +1,27 @@
+@import "../../style/base.scss";
+
+@include main-container {
+    .contentContaier {
+        @include max-content-width;
+        @include container-items-center;
+
+        margin-top: 30px;
+    }
+    .footerContainer {
+        @include padding-x(30px);
+        @include max-content-width;
+
+        margin-top: 30px;
+
+        .title {
+            @include font($font-size-lg, $font-semibold);
+            margin-bottom: 20px
+        }
+        .footerContent {
+            @include container-x;
+
+            overflow-x: auto;
+            gap: 20px;
+        }
+    }
+}

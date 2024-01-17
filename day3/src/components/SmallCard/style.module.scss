@@ -1,0 +1,42 @@
+@import "../../style/base.scss";
+
+.cardContainer {
+    @include container-y;
+
+    align-items: center;
+    width: 200px;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    .imgContent {
+        height: 150px;
+        width: 80%;
+        margin-bottom: -100px;
+        z-index: 20;
+        border-radius: 999px;
+    }
+    .spacer {
+        height: 100px;
+    }
+    .bottomContent {
+        @include container-y;
+        @include padding(10px);
+
+        justify-content: end;
+        align-items: center;
+        width: 100%;
+        border: $border-color 4px solid;
+        border-radius: 5px;
+
+        .title {
+            @include font($font-size-md, $font-semibold);
+            @include truncate-text;
+
+            width: 100%;
+            text-align: center;
+        }
+        .buttonBottom {
+            margin-top: 10px;
+        }
+    }
+}

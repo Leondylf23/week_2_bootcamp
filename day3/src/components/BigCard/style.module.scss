@@ -1,0 +1,119 @@
+@import "../../style/base.scss";
+
+.contentCard {
+    @include container-x;
+    @include padding-x (20px);
+    @include padding-y (25px);
+
+    height: 450px;
+    width: 600px;
+    border: $border-color 5px solid;
+    border-radius: 25px;
+    flex-shrink: 0;
+    margin-right: 265px;
+    gap: 20px;
+    
+    .leftSide {
+        @include container-y;
+
+        width: 80%;
+        flex-shrink: 0;
+
+        .title {
+            @include font($font-size-lg, $font-semibold);
+
+            margin-bottom: 15px
+        }
+        .contentDescription {
+            @include font($font-size-md, $font-normal);
+
+            margin-bottom: 25px;
+            min-height: 15%;
+            max-height: 30%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .ingredientTitle {
+            @include font($font-size-lg, $font-semibold);
+
+            color: $text-color-hover;
+            margin-bottom: 20px;
+        }
+        .ingridientsContainer {
+            @include container-y;
+
+            .ingredientsContents {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                width: 100%;
+                gap: 10px;
+                margin-bottom: 20px;
+                height: 100px;
+                overflow-y: auto;
+
+                .ingredientContent {
+                    @include container-x;
+
+                    width: 80%;
+                    gap: 10px;
+
+                    .imgIngr {
+                        width: 35px;
+                        height: 35px;
+                        object-fit: cover;
+                        border: $border-color 2px solid;
+                        border-radius: 6px;
+                        padding: 3px
+                    }
+                    .ingrContentLeft {
+                        @include container-y;
+                        
+                        justify-content: center;
+
+                        .title {
+                            @include font($font-size-md, $font-normal);
+                            margin-bottom: 5px;
+                        }
+                        .detail {
+                            @include font($font-size-sm, $font-normal);
+                            color: $text-color-hover;
+                        }
+                    }
+                }
+            }
+            .contentButtons {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                width: 100%;
+                gap: 10px;
+
+                .button {
+                    width: 80%;
+                }
+            }
+            .contentButtonSingle {
+                @include container-x;
+
+                justify-content: center;
+                width: 100%;
+
+                .button {
+                    width: 40%;
+                }
+            }
+        }
+    }
+    .rightSide {
+        width: 20%;
+        position: relative;
+        height: 100%;
+
+        .rightImg {
+            position: absolute;
+            top: 8%;
+            height: 380px;
+            width: 380px;
+            object-fit: cover;;
+        }
+    }
+}

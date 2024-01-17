@@ -1,0 +1,73 @@
+@import "../../style/base.scss";
+
+@include main-container {
+    .tabsContainer {
+        @include container-x;
+        @include font($font-size-sm, $font-semibold);
+        @include padding-x(30px);
+        @include max-content-width;
+
+        gap: 20px;
+
+        .tabName {
+            cursor: pointer;
+
+            &:hover {
+                color: $text-color-hover;
+            }
+        }
+        .tabNameActive {
+            cursor: pointer;
+            color: $text-color-active;
+
+            &:hover {
+                color: $text-color-hover;
+            }
+        }
+    }
+    .contentContaier {
+        @include max-content-width;
+
+        margin-top: 30px;
+        height: max-content;
+
+        .list {
+            @include container-x;
+
+            width: 100%;
+            height: max-content;
+            overflow-x: auto;
+            gap: 20px;
+
+            .spacerLeft {
+                flex-shrink: 0;
+                width: 30px;
+                margin-right: -20px;
+                height: 100%;
+            }
+            .spacerRight {
+                flex-shrink: 0;
+                width: 30px;
+                margin-left: -20px;
+                height: 100%;
+            }
+        }
+    }
+    .footerContainer {
+        @include padding-x(30px);
+        @include max-content-width;
+
+        margin-top: 30px;
+
+        .title {
+            @include font($font-size-lg, $font-semibold);
+            margin-bottom: 20px
+        }
+        .footerContent {
+            @include container-x;
+
+            overflow-x: auto;
+            gap: 20px;
+        }
+    }
+}
