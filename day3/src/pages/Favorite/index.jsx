@@ -42,6 +42,7 @@ export default function FavoritePage() {
     }
     function removeData(id) {
         setData(prevVal => prevVal.filter(v => v.id !== id));
+        setViewData(prevVal => prevVal.filter(v => v.id !== id));
     }
 
     useEffect(() => {

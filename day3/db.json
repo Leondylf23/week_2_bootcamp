@@ -1,46 +1,11 @@
 {
   "favorites": [
     {
-      "id": "52874",
-      "idMeal": "52874",
-      "strMealThumb": "https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg",
-      "strMeal": "Beef and Mustard Pie",
-      "strCategory": "Beef"
-    },
-    {
-      "id": "53071",
-      "idMeal": "53071",
-      "strMealThumb": "https://www.themealdb.com/images/media/meals/pkopc31683207947.jpg",
-      "strMeal": "Beef Asado",
-      "strCategory": "Beef"
-    },
-    {
-      "id": "52997",
-      "idMeal": "52997",
-      "strMealThumb": "https://www.themealdb.com/images/media/meals/z0ageb1583189517.jpg",
-      "strMeal": "Beef Banh Mi Bowls with Sriracha Mayo, Carrot & Pickled Cucumber",
-      "strCategory": "Beef"
-    },
-    {
-      "id": "52904",
-      "idMeal": "52904",
-      "strMealThumb": "https://www.themealdb.com/images/media/meals/vtqxtu1511784197.jpg",
-      "strMeal": "Beef Bourguignon",
-      "strCategory": "Beef"
-    },
-    {
       "id": "52812",
       "idMeal": "52812",
       "strMealThumb": "https://www.themealdb.com/images/media/meals/ursuup1487348423.jpg",
       "strMeal": "Beef Brisket Pot Roast",
       "strCategory": "Beef"
-    },
-    {
-      "id": "52848",
-      "idMeal": "52848",
-      "strMealThumb": "https://www.themealdb.com/images/media/meals/vxuyrx1511302687.jpg",
-      "strMeal": "Bean & Sausage Hotpot",
-      "strCategory": "Miscellaneous"
     },
     {
       "id": "52969",
@@ -62,13 +27,6 @@
       "strMealThumb": "https://www.themealdb.com/images/media/meals/sypxpx1515365095.jpg",
       "strMeal": "Brown Stew Chicken",
       "strCategory": "Chicken"
-    },
-    {
-      "id": "52978",
-      "idMeal": "52978",
-      "strMealThumb": "https://www.themealdb.com/images/media/meals/mlchx21564916997.jpg",
-      "strMeal": "Kumpir",
-      "strCategory": "Side"
     }
   ]
 }
