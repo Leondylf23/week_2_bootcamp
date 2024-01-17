@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { callApi } from "../../domain/api";
+import { callApi, callApiLocal } from "../../domain/api";
 import { useNavigate } from "react-router-dom";
 
 import SmallCard from "../../components/SmallCard";
@@ -7,6 +7,7 @@ import LoadingContainer from "../../components/LoadingContainer";
 import BigCard from "../../components/BigCard";
 
 import classes from "./style.module.scss";
+import Tab from "../../components/Tab";
 
 export default function Home() {
     const [data, setData] = useState([]);
@@ -22,17 +23,6 @@ export default function Home() {
     function gotToDetail(id) {
         navigate(`/${id}`);
     }
-
-    async function fetchCategoryData() {
-        try {
-            const resCategory = await callApi("/categories.php", "GET");
-            resCategory?.categories?.splice(6);
-            setCategories(resCategory?.categories?.map(e => e.strCategory));
-            setisLoadingPage(false);
-        } catch (error) {
-            console.error(error);
-        }
-    }
     async function fetchDataMealsData() {
         setIsLoadingMealsData(true);
         try {
@@ -46,10 +36,11 @@ export default function Home() {
                     detailsFetches.push(callApi("/lookup.php", "GET", {}, { i: el?.idMeal }));
                 }
             }
-
             const resAll = await Promise.all(detailsFetches);
-            setData(resAll?.map(e => e.meals[0]));
-
+            const checkSave = await callApiLocal(`/favorites`, "GET");
+            const constructdata = resAll?.map(e => ({...e?.meals[0], isSaved: (checkSave?.findIndex(v => v.id === e?.meals[0]?.idMeal) != -1)}));
+    
+            setData(constructdata);
             setIsLoadingMealsData(false);
         } catch (error) {
             console.error(error);
@@ -71,8 +62,6 @@ export default function Home() {
     }
 
     useEffect(() => {
-        setisLoadingPage(true);
-        fetchCategoryData();
         fetchMoreMeals();
     }, []);
 
@@ -82,14 +71,9 @@ export default function Home() {
 
     return (
         <div className={classes.mainContainer}>
+            <Tab tab={tab} setTab={setTab} setIsLoading={setisLoadingPage} getTabData={setCategories} />
             {isLoadingPage ? <LoadingContainer isFullHeight={true} /> :
                 <>
-                    <div className={classes.tabsContainer}>
-                        {categories.map((e, i) =>
-                            <h2 key={e} className={tab === i ? classes.tabNameActive : classes.tabName} onClick={() => setTab(i)}>{e}</h2>
-                        )}
-                        <h2 className={tab === (categories.length) ? classes.tabNameActive : classes.tabName} onClick={() => setTab(categories.length)}>Favorite</h2>
-                    </div>
                     <div className={classes.contentContaier}>
                         {isLoadingMealsData ? <LoadingContainer /> :
                             <div className={classes.list}>

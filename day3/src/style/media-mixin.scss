@@ -10,22 +10,22 @@ $screen-xxl: 1400px;
     }
 }
 @mixin media-screen-sm {
-    @media screen and (max-width: $screen-md) {
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
         @content;
     }
 }
 @mixin media-screen-md {
-    @media screen and (max-width: $screen-lg) {
+    @media screen and (min-width: $screen-md) and (max-width: $screen-lg) {
         @content;
     }
 }
 @mixin media-screen-lg {
-    @media screen and (max-width: $screen-xl) {
+    @media screen and (min-width: $screen-lg) and (max-width: $screen-xl) {
         @content;
     }
 }
 @mixin media-screen-xl {
-    @media screen and (max-width: $screen-xxl) {
+    @media screen and (min-width: $screen-xl) and (max-width: $screen-xxl) {
         @content;
     }
 }

@@ -6,9 +6,12 @@
         @include container-items-center;
 
         margin-top: 30px;
+
+        @include media-screen-xs {
+            margin-top: 5px;
+        }
     }
     .footerContainer {
-        @include padding-x(30px);
         @include max-content-width;
 
         margin-top: 30px;
@@ -22,6 +25,10 @@
 
             overflow-x: auto;
             gap: 20px;
+        }
+
+        @include media-screen-xs {
+            margin-top: 5px;
         }
     }
 }

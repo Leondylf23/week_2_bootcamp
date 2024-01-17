@@ -1,3 +1,32 @@
 {
-  "favorites": []
+  "favorites": [
+    {
+      "id": "52812",
+      "idMeal": "52812",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/ursuup1487348423.jpg",
+      "strMeal": "Beef Brisket Pot Roast",
+      "strCategory": "Beef"
+    },
+    {
+      "id": "52969",
+      "idMeal": "52969",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/gpz67p1560458984.jpg",
+      "strMeal": "Chakchouka ",
+      "strCategory": "Miscellaneous"
+    },
+    {
+      "id": "53049",
+      "idMeal": "53049",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg",
+      "strMeal": "Apam balik",
+      "strCategory": "Dessert"
+    },
+    {
+      "id": "52940",
+      "idMeal": "52940",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/sypxpx1515365095.jpg",
+      "strMeal": "Brown Stew Chicken",
+      "strCategory": "Chicken"
+    }
+  ]
 }

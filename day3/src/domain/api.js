@@ -20,7 +20,7 @@ export const callApi = async (endpoint, method, headers = {}, params = {}, data 
 
 export const callApiLocal = async (endpoint, method, headers = {}, params = {}, data ={}) => {
   const options = {
-      url: baseUrl + endpoint,
+      url: baseUrllocal + endpoint,
       method,
       headers,
       params,

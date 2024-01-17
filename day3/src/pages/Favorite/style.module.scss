@@ -1,0 +1,31 @@
+@import "../../style/base.scss";
+
+@include main-container {
+    .container {
+        // @include padding-x(30px);
+        @include max-content-width;
+
+        margin-top: 30px;
+
+        .title {
+            @include font($font-size-lg, $font-semibold);
+            margin-bottom: 20px
+        }
+        .list {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+            justify-items: center;
+
+            @include media-screen-md {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+            @include media-screen-sm {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            @include media-screen-xs {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+        }
+    }
+}
