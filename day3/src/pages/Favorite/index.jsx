@@ -23,6 +23,7 @@ export default function FavoritePage() {
         navigate(`/${id}`)
     }
     function setFilterData(dataIn) {
+        if(!Array.isArray(dataIn)) return;
         if(dataIn && tab === -1) {
             setViewData(dataIn);
         } else {
@@ -64,7 +65,7 @@ export default function FavoritePage() {
                     <div className={classes.container}>
                         <div className={classes.list}>
                             {isLoadingFavorites ? <LoadingContainer /> : 
-                            viewData.map(e => <SmallCard key={e.idMeal} data={e} onClickData={goToDetail} onDeleteData={removeData} />)}
+                            viewData?.map(e => <SmallCard key={e.idMeal} data={e} onClickData={goToDetail} onDeleteData={removeData} />)}
                         </div>
                     </div>
                 </>
