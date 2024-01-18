@@ -1,0 +1,21 @@
+@import "../../style/base.scss";
+
+@include main-container {
+    .createBtnContainer {
+        @include container-x;
+        
+        width: 100%;
+        justify-content: end;
+        margin-bottom: 20px;
+    }
+    .buttonContainer {
+        @include container-x;
+
+        justify-content: center;
+        gap: 20px;
+
+    }
+    .button {
+        @include button;
+    }
+}

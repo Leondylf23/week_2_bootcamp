@@ -1,0 +1,58 @@
+@import "../../style/base.scss";
+
+@include main-container {
+    .titleContainer {
+        margin-bottom: 20px;
+        max-width: $screen-lg;
+        width: 100%;
+
+        .text {
+            @include font($font-size-xxl, $font-bold);
+        }
+    }
+    .formContainer {
+        @include container-y;
+
+        width: 100%;
+        max-width: $screen-lg;
+        gap: 20px;
+
+        .inputContainer {
+            @include container-x;
+
+            gap: 20px;
+
+            @include media-screen-sm {
+                @include container-y;
+            }
+            @include media-screen-xs {
+                @include container-y;
+            }
+
+            .inputForm {
+                @include font($font-size-md, $font-normal);
+
+                width: 100%;
+            }
+        }
+        label {
+            color: $text-color;
+        }
+        input {
+            color: $text-color;
+        }
+        .buttonContainer {
+            @include container-x;
+            
+            width: 100%;
+            justify-content: center;
+            margin-top: 20px;
+            .button {
+                @include button;
+            }
+        }
+        .alert {
+            @include margin-y(10px);
+        }
+    }
+}

@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  width: 100%;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+a, b, p, h1, h2, h3, h4, h5, div {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,39 @@
+@import "../../style/base.scss";
+
+.navBar { 
+    background-color: $primary-color;
+}
+.swipeMenu {
+    @include container-y;
+    
+    width: 250px;
+    height: 100%;
+    background-color: $primary-color-darker;
+    
+    .swipeMenuChildren {
+        @include container-x;
+    
+        width: 100%;
+        align-items: center;
+
+        .swipeMenuButton {
+            @include padding-y(15px);
+
+            width: 100%;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $secondary-color-darker;
+            }
+            .icon {
+                color: $text-color
+            }
+            .text {
+                color: $text-color
+            }
+        }
+    }
+    .swipeMenuChildrenActive {
+        background-color: $secondary-color;
+    }
+}

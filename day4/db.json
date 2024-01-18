@@ -1,0 +1,25 @@
+{
+  "password": [
+    {
+      "id": "413e",
+      "provider": "dwasdwasd",
+      "email": "wasdwasd",
+      "password": "jn9ioj90j",
+      "category": "work"
+    },
+    {
+      "id": "bd11",
+      "provider": "asadssadasdasd",
+      "email": "asdwasdwa",
+      "password": "sdwasdwasd",
+      "category": "family"
+    },
+    {
+      "id": "80f7",
+      "provider": "adwasdw",
+      "email": "asdwasdw",
+      "password": "asdwasdwas",
+      "category": "personal"
+    }
+  ]
+}

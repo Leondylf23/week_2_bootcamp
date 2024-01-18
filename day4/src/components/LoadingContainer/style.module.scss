@@ -1,0 +1,27 @@
+@import "../../style/base.scss";
+
+.loadingContainer {
+    @include container-items-center;
+
+    width: 100%;
+    height: 300px;
+
+    .text {
+        @include font($font-size-md, $font-bold);
+    }
+}
+.loadingContainerFull {
+    @include container-items-center;
+
+    width: 100%;
+    flex-grow: 1;
+
+    .text {
+        @include font($font-size-md, $font-bold);
+    }
+}
+.circularColor {
+    color: $primary-color !important;
+    width: 80px !important;
+    height: 80px !important;
+}

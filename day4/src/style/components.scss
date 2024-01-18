@@ -1,0 +1,13 @@
+@import "./colors.scss";
+@import "./global-mixin.scss";
+
+@mixin button {
+    @include container-x;
+
+    background-color: $secondary-color;
+    align-items: center;
+
+    &:hover {
+        background-color: $secondary-color-darker;
+    }
+}

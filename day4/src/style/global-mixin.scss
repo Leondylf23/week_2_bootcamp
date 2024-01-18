@@ -1,0 +1,82 @@
+@import "./colors.scss";
+@import "./media-mixin.scss";
+
+@mixin container-items-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin main-container {
+    .mainContainer {
+        @include padding-x(30px);
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 100px;
+        background-color: $background-color;
+        min-height: 100dvh;
+
+        @include media-screen-xs {
+            @include padding-x(10px);
+        }
+        @include media-screen-sm {
+            @include padding-x(20px);
+        }
+
+        @content;
+    }
+}
+@mixin max-content-width {
+    width: 100%;
+    max-width: $screen-xl;
+    // @include media-screen-xs {
+    //     width: $screen-sm;
+    // }
+    // @include media-screen-sm {
+    //     width: $screen-sm;
+    // }
+    // @include media-screen-md {
+    //     width: $screen-lg;
+    // }
+}
+@mixin container-x {
+    display: flex;
+    flex-direction: row;
+}
+@mixin container-y {
+    display: flex;
+    flex-direction: column;
+}
+@mixin fill-container {
+    display: flex;
+    width: 100%;
+}
+@mixin padding ($value) {
+    padding: $value;
+    box-sizing: border-box;
+}
+@mixin padding-x ($value) {
+    padding-left: $value;
+    padding-right: $value;
+    box-sizing: border-box;
+}
+@mixin padding-y ($value) {
+    padding-top: $value;
+    padding-bottom: $value;
+    box-sizing: border-box;
+}
+@mixin margin-y ($value) {
+    margin-top: $value;
+    margin-bottom: $value;
+}
+@mixin margin-x ($value) {
+    margin-left: $value;
+    margin-right: $value;
+}
+@mixin truncate-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
