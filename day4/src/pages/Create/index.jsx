@@ -6,7 +6,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate, useParams } from "react-router-dom";
 import SaveIcon from '@mui/icons-material/Save';
 
-import { categoryList, emptyForm } from "../../constants";
+import { categoryList, emailRegex, emptyForm, urlRegex } from "../../constants";
 import { callApiLocal } from "../../domain/api";
 import LoadingContainer from "../../components/LoadingContainer";
 
@@ -43,11 +43,11 @@ export default function CreatePage({ isFromDetail }) {
         let isNotValid = false;
         setErrFields(defaultValueFields);
 
-        if (formData.provider === "") {
+        if (formData.provider === "" || !urlRegex.test(formData.provider)) {
             setErrFields(prevVal => ({ ...prevVal, provider: true }));
             isNotValid = true;
             showMessage("warning", "Please enter a valid provider URL!");
-        } else if (formData.email === "") {
+        } else if (formData.email === "" || !emailRegex.test(formData.email)) {
             setErrFields(prevVal => ({ ...prevVal, email: true }));
             isNotValid = true;
             showMessage("warning", "Please enter a valid Email!");
@@ -87,7 +87,7 @@ export default function CreatePage({ isFromDetail }) {
 
             setFormData(data);
             setIsLoading(false);
-            setPage("Data Detail");
+            setPage("Detail Data");
         } catch (error) {
             setIsLoading(false);
             showMessage("error", error.message);
@@ -123,7 +123,6 @@ export default function CreatePage({ isFromDetail }) {
                             label="Provider"
                             defaultValue=""
                             type="url"
-                            variant="filled"
                             className={classes.inputForm}
                             color="error"
                             error={errFields.provider}
@@ -136,7 +135,6 @@ export default function CreatePage({ isFromDetail }) {
                             label="Email"
                             type="email"
                             defaultValue=""
-                            variant="filled"
                             className={classes.inputForm}
                             error={errFields.email}
                             onChange={(e) => setFormData(prevVal => ({ ...prevVal, email: e.target.value }))}
@@ -161,7 +159,7 @@ export default function CreatePage({ isFromDetail }) {
                                             onClick={() => setIsShowPassword(prevVal => !prevVal)}
                                             onMouseDown={() => setIsShowPassword(false)}
                                             edge="end"
-                                            sx={{color: "white"}}
+                                            // sx={{color: "white"}}
                                         >
                                             {isShowPassword ? <VisibilityOff /> : <Visibility />}
                                         </IconButton>
@@ -175,6 +173,7 @@ export default function CreatePage({ isFromDetail }) {
                             />
                         </FormControl>
                         <TextField
+                            required
                             id="outlined-select-currency"
                             select
                             label="Select"
@@ -183,7 +182,7 @@ export default function CreatePage({ isFromDetail }) {
                             color="error"
                             error={errFields.category}
                             className={classes.inputForm}
-                            InputProps={{ style: { color: 'white' } }}
+                            // InputProps={{ style: { color: 'white' } }}
                             value={formData.category}
                             onChange={(e) => setFormData(prevVal => ({ ...prevVal, category: e.target.value }))}
                         >

@@ -13,6 +13,8 @@ export const categoryList = [
     },
 
 ];
+export const urlRegex = /^(ftp|http|https):\/\/[^ "]+|(www\.)[^ "]+\.[a-z]{2,}(\/[^ "]+)?$/;
+export const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export const emptyForm = {
     provider: "",

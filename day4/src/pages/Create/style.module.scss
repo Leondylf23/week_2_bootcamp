@@ -51,8 +51,8 @@
                 @include button;
             }
         }
-        .alert {
-            @include margin-y(10px);
-        }
     }
+}
+.alert {
+    margin-bottom: 20px;
 }

@@ -1,25 +1,18 @@
 {
   "password": [
     {
-      "id": "413e",
-      "provider": "dwasdwasd",
-      "email": "wasdwasd",
-      "password": "jn9ioj90j",
-      "category": "work"
-    },
-    {
-      "id": "bd11",
-      "provider": "asadssadasdasd",
-      "email": "asdwasdwa",
-      "password": "sdwasdwasd",
+      "id": "544a",
+      "provider": "https://www.asdw.adwa",
+      "email": "asdwasdw@asdw.d",
+      "password": "asdwasdwa",
       "category": "family"
     },
     {
-      "id": "80f7",
-      "provider": "adwasdw",
-      "email": "asdwasdw",
-      "password": "asdwasdwas",
-      "category": "personal"
+      "id": "0526",
+      "provider": "www.asdw.adw",
+      "email": "dwasdwadw@ddwa.sdas",
+      "password": "dwwwwwww",
+      "category": "family"
     }
   ]
 }

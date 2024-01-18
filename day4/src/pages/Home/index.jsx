@@ -69,7 +69,8 @@ export default function Home({category}) {
     }
     function actionDialog(isAccept) {
         if (isAccept) {
-            deleteDataFetch(data?.id);
+            deleteDataFetch(deleteData?.id);
+            setShowDialog(false);
         } else {
             setShowDialog(false);
         }
@@ -78,7 +79,7 @@ export default function Home({category}) {
     }
 
     useEffect(() => {
-        setPage("Home");
+        setPage((category && category != "") ? getCategoryName(category) : "Home");
         fetchData();
     }, [category]);
 
